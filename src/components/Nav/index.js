@@ -2,8 +2,25 @@ import React from 'react';
 
 function Nav() {
 
-    function pageSelected() {
-        console.log("hello")
+    
+
+    const pages = [
+        {
+            name: "About"
+        },
+        {
+            name: "Browse"
+        },
+        {
+            name: "Login"
+        },
+        {
+            name: "Sign-Up"
+        },
+    ];
+
+    function pageSelected(name) {
+        console.log(`${name} clicked`)
     }
 
 
@@ -16,7 +33,19 @@ function Nav() {
             </h2>
             <nav>
                 <ul className='flex-row'>
-                    <li className='mx-2'>
+
+                    {pages.map((page) => (
+                        <li 
+                            className='mx-2'
+                            key={page.name}
+                        >
+                            <span onClick={() => pageSelected(page.name)}>
+                                {page.name}
+                            </span>
+                        </li>
+                    ))}
+
+                    {/* <li className='mx-2'>
                         <span onClick={pageSelected} >
                             <a href="#about">
                                 About
@@ -43,7 +72,7 @@ function Nav() {
                                 Sign-Up
                             </a>
                         </span>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
         </header>
