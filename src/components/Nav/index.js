@@ -1,6 +1,12 @@
 import React from 'react';
 
 function Nav() {
+
+    function pageSelected() {
+        console.log("hello")
+    }
+
+
     return (
         <header>
             <h2>
@@ -11,22 +17,32 @@ function Nav() {
             <nav>
                 <ul className='flex-row'>
                     <li className='mx-2'>
-                        <a href="#about">
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <span>Browse</span>
-                    </li>
-                    <li className='mx-2'>
-                        <a href="#login">
-                            Login
-                        </a>
+                        <span onClick={pageSelected} >
+                            <a href="#about">
+                                About
+                            </a>
+                        </span>
                     </li>
                     <li className='mx-2'>
-                        <a href="#login">
-                            Sign-Up
-                        </a>
+                        <span onClick={pageSelected} >
+                            <a href="#browse">
+                                Browse
+                            </a>
+                        </span>
+                    </li>
+                    <li className='mx-2'>
+                    <span onClick={pageSelected} >
+                            <a href="#login">
+                                Login
+                            </a>
+                        </span>
+                    </li>
+                    <li className='mx-2'>
+                    <span onClick={pageSelected} >
+                            <a href="#signup">
+                                Sign-Up
+                            </a>
+                        </span>
                     </li>
                 </ul>
             </nav>
