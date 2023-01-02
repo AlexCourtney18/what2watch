@@ -27,8 +27,8 @@ function Nav() {
     return (
         <header>
             <h2>
-                <a href="/">
-                    <span role="img" aria-label="camera">🎬</span> What2Watch
+                <a data-testid="link" href="/">
+                    <span role="img" aria-label="clicker">🎬</span> What2Watch
                 </a>
             </h2>
             <nav>
@@ -44,35 +44,6 @@ function Nav() {
                             </span>
                         </li>
                     ))}
-
-                    {/* <li className='mx-2'>
-                        <span onClick={pageSelected} >
-                            <a href="#about">
-                                About
-                            </a>
-                        </span>
-                    </li>
-                    <li className='mx-2'>
-                        <span onClick={pageSelected} >
-                            <a href="#browse">
-                                Browse
-                            </a>
-                        </span>
-                    </li>
-                    <li className='mx-2'>
-                    <span onClick={pageSelected} >
-                            <a href="#login">
-                                Login
-                            </a>
-                        </span>
-                    </li>
-                    <li className='mx-2'>
-                    <span onClick={pageSelected} >
-                            <a href="#signup">
-                                Sign-Up
-                            </a>
-                        </span>
-                    </li> */}
                 </ul>
             </nav>
         </header>
