@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from './components/Nav';
 import Landing from './components/Landing';
 import About from './components/About';
+import SignupForm from './components/Signup';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <main>
         <Landing></Landing>
         <About></About>
+        <SignupForm></SignupForm>
       </main>
     </div>
   );
