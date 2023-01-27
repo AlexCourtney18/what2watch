@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Nav() {
 
     
 
-    const pages = [
+    const [pages] = useState([
         {
             name: "About"
         },
@@ -17,11 +17,9 @@ function Nav() {
         {
             name: "Sign-Up"
         },
-    ];
+    ]);
 
-    function pageSelected(name) {
-        console.log(`${name} clicked`)
-    }
+    const [currentPage, setCurrentPage] = useState(pages[0]);
 
 
     return (
@@ -36,10 +34,10 @@ function Nav() {
 
                     {pages.map((page) => (
                         <li 
-                            className='mx-2'
+                            className={`mx-2 ${currentPage.name === page.name && 'navActive'}`}
                             key={page.name}
                         >
-                            <span onClick={() => pageSelected(page.name)}>
+                            <span onClick={() => {setCurrentPage(page)}}>
                                 {page.name}
                             </span>
                         </li>
