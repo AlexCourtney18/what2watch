@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 function Nav(props) {
     const {
@@ -6,6 +6,10 @@ function Nav(props) {
         setCurrentPage,
         currentPage,
     } = props;
+
+    useEffect(() => {
+        document.title = currentPage.name;
+    }, [currentPage]);
 
 
 
