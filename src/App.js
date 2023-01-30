@@ -8,6 +8,7 @@ import './App.css';
 function App() {
 
   const [pages] = useState([
+    { name: 'Home' },
     { name: 'About' },
     { name: 'Browse' },
     { name: 'Login' },
@@ -15,6 +16,7 @@ function App() {
   ])
 
   const [currentPage, setCurrentPage] = useState(pages[0]);
+  console.log(currentPage);
 
   return (
     <div>
@@ -24,9 +26,13 @@ function App() {
       currentPage={currentPage}
       ></Nav>
       <main>
-        <Landing></Landing>
-        <About></About>
-        <SignupForm></SignupForm>
+        {currentPage.name === 'About' ? (
+          <About></About>
+        ) : currentPage.name === 'Sign-Up' ? (
+          <SignupForm></SignupForm>
+        ) : (
+          <Landing></Landing>
+        )}
       </main>
     </div>
   );
