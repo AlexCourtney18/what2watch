@@ -56,6 +56,11 @@ function SignupForm() {
                     <label htmlFor="password">Password:</label>
                     <input type="text" name="password" defaultValue={password} onChange={handleChange} />
                 </div>
+                {errorMessage && (
+                    <div>
+                        <p className='error-text'>{errorMessage}</p>
+                    </div>
+                )}
                 <button type="submit">Create Account</button>
             </form>
         </section>
