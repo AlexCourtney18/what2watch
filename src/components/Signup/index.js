@@ -46,15 +46,15 @@ function SignupForm() {
             <form id="signup-form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">First Name:</label>
-                    <input type="text" name="name" defaultValue={name} onChange={handleChange} />
+                    <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="email">Email Address:</label>
-                    <input type="email" name="email" defaultValue={email} onChange={handleChange} />
+                    <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input type="text" name="password" defaultValue={password} onChange={handleChange} />
+                    <input type="text" name="password" defaultValue={password} onBlur={handleChange} />
                 </div>
                 {errorMessage && (
                     <div>
