@@ -35,7 +35,7 @@ body {
   letter-spacing: .1em;
   background: var(--dark);
   color: var(--light);
-  font-family: 'Poiret One', cursive;
+  font-family: 'Inconsolata', monospace;
 
 }
 
@@ -45,7 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inconsolata', monospace;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -229,9 +229,26 @@ textarea {
   padding-bottom: var(--spacing-two);
 }
 
+/* CARDS */
 .card {
-  width: 25%;
-  text-align: center;
+  margin: 0 0 20px 0;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.card-header {
+  color: var(--dark);
+  margin: 0;
+  background-color: var(--secondary);
+  padding: 0.625rem;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.card-body {
+  padding: 2.5%;
+  font-size: 1.4rem;
 }
 
 .img-thumbnail {
