@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Landing from './components/Landing';
 import About from './components/About';
 import SignupForm from './components/Signup';
 import Footer from './components/Footer';
 import Browse from './pages/Browse';
+import Login from './pages/Login';
+import NoMatch from './pages/NoMatch';
+import SingleThought from './pages/SingleThought';
+import Signup from './pages/Signup';
 import './App.css';
 
 const httpLink = createHttpLink({
