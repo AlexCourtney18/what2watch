@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav(props) {
     const {
@@ -16,21 +17,23 @@ function Nav(props) {
     return (
         <header className='flex-row px-1'>
             <h2>
-                <a data-testid="link" href="/">
+                <Link to="/">
                     <span role="img" aria-label="clicker">🎬</span> What2Watch
-                </a>
+                </Link>
             </h2>
             <nav>
                 <ul className='flex-row'>
                     {pages.map((page) => (
-                        <li
-                            className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
-                            key={page.name}
-                        >
-                            <span onClick={() => {setCurrentPage(page)}}>
-                                {page.name}
-                            </span>
-                        </li>
+                        <Link to={page.name}>
+                            <li
+                                className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
+                                key={page.name}
+                            >
+                                <span onClick={() => { setCurrentPage(page) }}>
+                                    {page.name}
+                                </span>
+                            </li>
+                        </Link>
                     ))}
                 </ul>
             </nav>
