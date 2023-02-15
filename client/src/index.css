@@ -127,6 +127,42 @@ button[disabled] {
   opacity: .8;
 }
 
+a {
+	border-radius: 5px;
+	color: var(--dark);
+	font-weight: 600;
+	padding: 2px 4px;
+	margin-left: -2px;
+	margin-right: -2px;
+	
+}
+
+.btn,
+.pill {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--dark);
+  outline: none;
+  background-color: var(--secondary);
+  transition: all 0.5s;
+}
+
+
+
+.btn:hover,
+.pill:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.btn-inline {
+  display: inline;
+}
+
 img {
   max-width: 100%;
 }
@@ -304,15 +340,7 @@ button {
 	padding: 10px 15px;	
 }
 
-a {
-	border-radius: 5px;
-	color: var(--primary);
-	font-weight: 600;
-	padding: 2px 4px;
-	margin-left: -2px;
-	margin-right: -2px;
-	
-}
+
 
 .navActive {
   color: var(--secondary);
