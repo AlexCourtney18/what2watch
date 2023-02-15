@@ -5,7 +5,7 @@ function Landing() {
     return (
         <section className='my-5'>
             <h1 id="title">What To Watch</h1>
-            <img src={landingImage} className="my-2" style={{ width: "100%" }} alt="cover" />
+            <img src={landingImage} className="my-2" style={{ width: "75%" }} alt="cover" />
         </section>
     );
 }

@@ -10,6 +10,7 @@ import Browse from './pages/Browse';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import SingleThought from './pages/SingleThought';
+import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import './App.css';
 
@@ -29,7 +30,7 @@ function App() {
     { name: 'About' },
     { name: 'Browse' },
     { name: 'Login' },
-    { name: 'Sign-Up'},
+    { name: 'Sign-Up' },
   ])
 
   const [currentPage, setCurrentPage] = useState(pages[0]);
@@ -37,27 +38,55 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
+      <Router>
 
-    <div>
-      <Nav
-      pages={pages}
-      setCurrentPage={setCurrentPage}
-      currentPage={currentPage}
-      ></Nav>
-      <main>
-        {currentPage.name === 'About' ? (
-          <About></About>
-        ) : currentPage.name === 'Sign-Up' ? (
-          <SignupForm></SignupForm>
-        )  : currentPage.name === 'Browse' ? (
-          <Browse></Browse>
-        ) : (
-          <Landing></Landing>
-        )}
-      </main>
-      <Footer></Footer>
-    </div>
+        <div>
+          <Nav
+            pages={pages}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+          ></Nav>
 
+          <Routes>
+            <Route
+              path="/"
+              element={<Landing />}
+            />
+            <Route
+              path="/about"
+              element={<About />}
+            />
+            <Route
+              path="/browse"
+              element={<Browse />}
+            />
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+            <Route
+              path="/signup"
+              element={<Signup />}
+            />
+            <Route
+              path="/profile"
+              element={<Profile />}
+            />
+            <Route
+              path="/thought"
+              element={<SingleThought />}
+            />
+
+            <Route
+              path="*"
+              element={<NoMatch />}
+            />
+          </Routes>
+
+          <Footer></Footer>
+        </div>
+
+      </Router>
     </ApolloProvider>
   );
 }
