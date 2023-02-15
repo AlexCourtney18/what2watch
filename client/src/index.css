@@ -90,6 +90,14 @@ a:hover {
   text-decoration: underline;
 }
 
+.text-light {
+  color: darkcyan
+}
+
+.text-dark {
+  color: var(--dark)
+}
+
 header {
   background: var(--dark);
 }
