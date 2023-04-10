@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Landing from './components/Landing';
 import About from './components/About';
-import SignupForm from './components/Signup';
 import Footer from './components/Footer';
 import Browse from './pages/Browse';
 import Login from './pages/Login';
@@ -45,7 +44,6 @@ function App() {
   ])
 
   const [currentPage, setCurrentPage] = useState(pages[0]);
-  console.log(currentPage);
 
   return (
     <ApolloProvider client={client}>
