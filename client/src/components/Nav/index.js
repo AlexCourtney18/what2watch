@@ -63,7 +63,6 @@ function Nav(props) {
                                 </Link>
                             ))}
                             {logoutSlice.map((page) => (
-                                <Link to={page.name}>
                                     <li
                                         className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
                                         key={page.name}
@@ -73,9 +72,7 @@ function Nav(props) {
                                                 {page.name}
                                             </a>
                                         </span>
-
                                     </li>
-                                </Link>
                             ))}
                         </>
                     ) : (
