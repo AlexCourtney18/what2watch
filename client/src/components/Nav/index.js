@@ -13,6 +13,18 @@ function Nav(props) {
         document.title = currentPage.name;
     }, [currentPage]);
 
+    const firstSlice = pages.slice(0, 3);
+    const secondSlice = pages.slice(3, 5);
+    const profileSlice = pages.slice(5, 6);
+    const logoutSlice = pages.slice(6, 7);
+
+
+    const logout = event => {
+        console.log("LOGOUT!");
+        event.preventDefault();
+        Auth.logout();
+    };
+
 
 
     return (
@@ -24,7 +36,7 @@ function Nav(props) {
             </h2>
             <nav>
                 <ul className='flex-row'>
-                    {pages.map((page) => (
+                    {firstSlice.map((page) => (
                         <Link to={page.name}>
                             <li
                                 className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
@@ -36,6 +48,52 @@ function Nav(props) {
                             </li>
                         </Link>
                     ))}
+                    {Auth.loggedIn() ? (
+                        <>
+                            {profileSlice.map((page) => (
+                                <Link to={page.name}>
+                                    <li
+                                        className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
+                                        key={page.name}
+                                    >
+                                        <span onClick={() => { setCurrentPage(page) }}>
+                                            {page.name}
+                                        </span>
+                                    </li>
+                                </Link>
+                            ))}
+                            {logoutSlice.map((page) => (
+                                <Link to={page.name}>
+                                    <li
+                                        className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
+                                        key={page.name}
+                                    >
+                                        <span onClick={() => { setCurrentPage(page) }}>
+                                            <a href="/" onClick={logout}>
+                                                {page.name}
+                                            </a>
+                                        </span>
+
+                                    </li>
+                                </Link>
+                            ))}
+                        </>
+                    ) : (
+                        <>
+                            {secondSlice.map((page) => (
+                                <Link to={page.name}>
+                                    <li
+                                        className={`mx-1 ${currentPage.name === page.name && 'navActive'}`}
+                                        key={page.name}
+                                    >
+                                        <span onClick={() => { setCurrentPage(page) }}>
+                                            {page.name}
+                                        </span>
+                                    </li>
+                                </Link>
+                            ))}
+                        </>
+                    )}
                 </ul>
             </nav>
         </header>

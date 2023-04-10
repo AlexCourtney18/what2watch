@@ -41,6 +41,8 @@ function App() {
     { name: 'Browse' },
     { name: 'Login' },
     { name: 'Sign-Up' },
+    { name: 'Profile' },
+    { name: 'Logout' },
   ])
 
   const [currentPage, setCurrentPage] = useState(pages[0]);
@@ -89,7 +91,6 @@ function App() {
               path="/thought/:id"
               element={<SingleThought />}
             />
-
             <Route
               path="*"
               element={<NoMatch />}
